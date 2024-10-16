@@ -16,9 +16,9 @@ export class UserComponent {
   @Input({required: true}) name!: string;
   @Output() select = new EventEmitter();
 
-  //get imagePath() {
-  //  return 'assets/users/' + this.avatar
-  //}
+  /*get imagePath() {
+    //!return 'assets/users/' + this.avatar "picturs dont load"
+  }*/
 
   onSelectUser() {
     this.select.emit(this.id);
