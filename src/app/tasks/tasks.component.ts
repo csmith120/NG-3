@@ -40,4 +40,8 @@ export class TasksComponent {
   get selectedUserTasks() {
     return this.tasks.filter((task) => task.userId === this.id);
   }
+
+  onComplete(id: string) {
+    //...
+  }
 }
