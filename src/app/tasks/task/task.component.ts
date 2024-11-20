@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Task } from 'zone.js/lib/zone-impl';
+
+import { type Task } from './task.model';
 
 @Component({
   selector: 'app-task',
