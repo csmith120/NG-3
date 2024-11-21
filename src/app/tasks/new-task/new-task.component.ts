@@ -9,6 +9,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class NewTaskComponent {
   @Output() cancel = new EventEmitter<void>()
+  enteredTitle = '';
+
 onCancel() {
   this.cancel.emit();
 }
