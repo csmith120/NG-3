@@ -9,6 +9,7 @@ import { TaskComponent } from "./task/task.component";
   styleUrl: './tasks.component.css'
 })
 export class TasksComponent {
+[x: string]: any;
   @Input({required: true}) id!: string;
   @Input({required: true}) name!: string;
   tasks = [
@@ -42,6 +43,6 @@ export class TasksComponent {
   }
 
   onComplete(id: string) {
-    //...
+    this.tasks = this.tasks.filter((task) => task.id !== id);
   }
 }
