@@ -13,7 +13,7 @@ import { type NewTaskData } from './task/task.model';
 })
 export class TasksComponent {
 [x: string]: any;
-  @Input({required: true}) id!: string;
+  @Input({required: true}) userId!: string;
   @Input({required: true}) name!: string;
   isAddingTask = false;
   tasks = [
@@ -59,6 +59,13 @@ export class TasksComponent {
   }
 
   onAddTask(taskData: NewTaskData) {
-
+    this.tasks.unshift({
+      userId: this.userId,
+      id: new Data().getTime().toString(),
+      title: taskData.title,
+      summary: taskData.summary,
+      dueDate: taskData.date
+    })
+    this.isAddingTask = false;
   }
 }
